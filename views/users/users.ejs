@@ -1,0 +1,71 @@
+<h3>Articles</h3>
+
+<div class="row">
+        <form class="col s12" action="/users/add" method="POST">
+          <div class="row">
+            <div class="input-field col s12">
+              <input  id="name" type="text" class="validate" name="name" required>
+              <label for="fname">Full Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input  id="uname" type="text" class="validate" name="uname" required>
+              <label for="uname">User Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input  id="pwd" type="password" class="validate" name="password" required>
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input  id="email" type="email" class="validate" name="email" required>
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="address" class="materialize-textarea validate" name="address" required></textarea>
+                  <label for="address">Address</label>
+                </div>
+              </div>
+              <div class="row">
+                    <button class="btn waves-effect waves-light" type="submit" name="submit">
+                            <i class="material-icons">Add User</i>
+                    </button>
+              </div>
+          
+          
+        </form>
+      </div>
+            
+
+<table class="stripped">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Address</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% users.forEach(function(user){ %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.address %></td>
+                    <td><a href="/users/edit/<%= user.id %>">Edit</a> | <a href="/users/delete/<%= user.id %>">Delete</a>  | <a href="/users/details/<%= user.id %>">View</a></td>
+                </tr>
+
+            <% }); %>
+          
+          
+        </tbody>
+      </table>
