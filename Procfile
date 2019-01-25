@@ -1,1 +1,1 @@
-worker: sails lift
+worker: npm run prod
