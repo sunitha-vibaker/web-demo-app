@@ -34,6 +34,10 @@ module.exports.security = {
     allowCredentials: false,
   },
 
+  /*cors: {
+    allRoutes: true,
+    allowOrigins: ['http://example.com','https://api.example.com','http://blog.example.com:1337','https://foo.com:8888']
+  }*/
 
   /****************************************************************************
   *                                                                           *

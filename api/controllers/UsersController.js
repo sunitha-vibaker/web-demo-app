@@ -13,7 +13,7 @@ module.exports = {
                 res.send(500,{err:err});
             }
             res.send(users);
-            //res.view("users/users",{users:users});
+           // res.view("users/users",{users:users});
         });
        
     },
@@ -42,8 +42,20 @@ module.exports = {
            // res.view('users/edit',{user:user});
         })
     },
-    details: (req,res) => {
+    /*details: (req,res) => {
         Users.findOne({_id: req.params.id}).exec(function(err, user){
+            if(err){
+                res.send(500,{err:err});
+            }
+            console.log(user);
+            res.send(user)
+           // res.view('users/details',{user:user});
+        })
+    },*/
+    details: (req,res) => {
+
+        console.log(req.params);
+        Users.findOne({username: req.params.id}).exec(function(err, user){
             if(err){
                 res.send(500,{err:err});
             }

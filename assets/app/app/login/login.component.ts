@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
     console.log(this.users$,"asdasdas");
     this.users$.forEach(user => {
       if(user.username === this.username && user.password === this.password){
-        this.router.navigate(['details/'+user.id]);
+       // this.router.navigate(['details/'+user.id]);
+        this.router.navigate(['details/'+user.username]);
       }
     });
     console.log(this.users$);
@@ -44,3 +45,5 @@ export class LoginComponent implements OnInit {
   }
 
 }
+ //// username:sunithan
+//password:welcome123

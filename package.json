@@ -103,11 +103,11 @@
   },
   "scripts": {
     "preinstall": "npm install -g @angular/cli @angular/compiler-cli",
-    "start": "npm-run-all open:client prod",
+    "start": "npm-run-all open:client dev",
     "open:client": "ng build --prod",
     "build": "npm run build",
     "clean": "rimraf assets/dist",
-    "prod": "sails lift",
+    "dev": "sails lift",
     "debug": "node --inspect app.js"
   },
   "main": "app.js",
