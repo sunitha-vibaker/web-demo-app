@@ -12,19 +12,22 @@ module.exports = {
             if(err){
                 res.send(500,{err:err});
             }
-            res.send(users);
-           // res.view("users/users",{users:users});
+           // res.send(users);
+            res.view("users/users",{users:users});
         });
        
     },
+    
     add: (req,res) =>{
+        console.log(req.body);
         const username = req.body.username;
         const password = req.body.password;
         const name = req.body.name;
+        const temp_id = req.body.temp_id;
         const email = req.body.email;
         const address = req.body.address;
 
-        Users.create({username:username,password:password,name:name,email:email,address:address}).exec((err) => {
+        Users.create({username:username,password:password,name:name,email:email,address:address,temp_id:temp_id}).exec((err) => {
             if(err){
                 res.send(500,{err:err});
             }
@@ -39,7 +42,7 @@ module.exports = {
                 res.send(500,{err:err});
             }
 
-           // res.view('users/edit',{user:user});
+            res.view('users/edit',{user:user});
         })
     },
     /*details: (req,res) => {
