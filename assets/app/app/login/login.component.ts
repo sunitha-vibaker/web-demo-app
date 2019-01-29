@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     this.users$.forEach(user => {
       if(user.username === this.username && user.password === this.password){
        // this.router.navigate(['details/'+user.id]);
-        this.router.navigate(['details/'+user.username]);
+        this.router.navigate(['admin']);
       }
     });
     console.log(this.users$);
